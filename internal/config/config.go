@@ -8,12 +8,20 @@ import (
 )
 
 type Config struct {
-	Server ServerConfig
+	Server    ServerConfig
+	Tarantool TarantoolConfig
 }
 
 type ServerConfig struct {
 	Mode   string `env:"APP_MODE" env-default:"local"`
 	Domain string `env:"DOMAIN" env-default:"localhost"`
+}
+
+type TarantoolConfig struct {
+	Host     string `env:"TARANTOOL_HOST"`
+	Port     string `env:"TARANTOOL_PORT"`
+	User     string `env:"TARANTOOL_USER"`
+	Password string `env:"TARANTOOL_PASSWORD"`
 }
 
 func New() (*Config, error) {
