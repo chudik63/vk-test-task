@@ -1,0 +1,7 @@
+services:
+  tarantool:
+    image: tarantool/tarantool
+    ports:
+      - "{TARANTOOL_PORT}:{TARANTOOL_PORT}"
+    env_file:
+      - .env
